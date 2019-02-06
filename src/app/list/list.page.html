@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu">
+        <img src="assets/Menu.png" class="menu" >
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title color="primary">
+
+      {{"Sobre nosotros" | translate }}
+
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="texto">
+  
+  <p style="color:var(--ion-color-text)" class="texto"> {{ "whereuwant" | translate}}  </p>
+  <ion-item class="imagen">
+      <img src="assets/imagen1.png" >
+   </ion-item>
+ 
+  <!-- <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list> -->
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content> 
