@@ -6,10 +6,11 @@
       </ion-menu-button>
       <ion-title style="color: #ffffff" lines="none">
         WhereUWant 
-      </ion-title>
+      </ion-title> 
     </ion-buttons>
-   
   </ion-toolbar>
+  <ion-searchbar (ionChange)="filtrar($event)" placeholder="Buscar destino" animated></ion-searchbar>
+
   <ion-segment [(ngModel)]="category" (ionChange)="slides.slideTo(category)" style="background-color: #6096d4"
   color="light">
   <ion-segment-button layout="icon-start" value="0" style="--padding-end:0px;--padding-start:0px">

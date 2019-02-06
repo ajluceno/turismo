@@ -21,6 +21,15 @@ npm-debug.log*
 coverage/
 www/
 node_modules/
+build-tools/
+emulator/
+extras/
+licenses/
+patcher/
+platforms/
+platform-tools/
+tools/
+plugins/
 tmp/
 temp/
 platforms/

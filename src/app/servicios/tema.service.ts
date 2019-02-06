@@ -68,7 +68,7 @@ export class TemaService {
           { themeVariable: '--ion-tabbar-ios-text-color-active', value: '#ffffff'},
           { themeVariable: '--ion-tabbar-md-text-color-active', value: '#ffffff'},
           { themeVariable: '--ion-background-color', value: '#383838'},
-          { themeVariable: '--ion-label-color', value: '#000'},
+          { themeVariable: '--ion-label-color', value: '#ffffff'},
           { themeVariable: '--ion-color-tertiary', value: '#6096d4'},
           { themeVariable: '--ion-toggle-handle-background-color', value: '#ffffff'},
           { themeVariable: '--ion-color-success', value: '#004d00'}

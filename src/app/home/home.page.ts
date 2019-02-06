@@ -27,7 +27,7 @@ export class HomePage {
   timestampsInSnapshots: true;
   listadovuelos = [];
   listadoPanelVuelos=[];
-
+  destino: string ="";
   listadoHotel = [];
   listadoPanelHotel=[];
 
@@ -47,7 +47,7 @@ export class HomePage {
   ionViewDidEnter() {
     this.SwipedTabsIndicator = document.getElementById("indicator");
 
-    this.hotel.leeHoteles().then((querySnapshot) => {
+    this.hotel.leeHoteles(this.destino).then((querySnapshot) => {
       this.listadoHotel = [];
       querySnapshot.forEach((doc) => {
         this.listadoHotel.push({ id: doc.id, ...doc.data() });
@@ -83,10 +83,16 @@ initializeItems(){
     });
     return await myloading.present();
   }
+    filtrar(busqueda){
+      this.destino = busqueda.srcElement.value;
+      console.log(this.destino);
+      this.actualizarPage(this.destino);
+    }
 
-  actualizarPage() {
+   
+  actualizarPage(destino: string) {
 
-    this.hotel.leeHoteles().then((querySnapshot) => {
+    this.hotel.leeHoteles(destino).then((querySnapshot) => {
       this.listadoHotel = [];
       querySnapshot.forEach((doc) => {
         this.listadoHotel.push({ id: doc.id, ...doc.data() });

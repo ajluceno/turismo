@@ -6,15 +6,22 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class HotelService {
-
+  
   miHotel: any;
 
   constructor(private fireStore: AngularFirestore) {
     this.miHotel = fireStore.collection<any>(environment.firebaseConfig.hoteles)
   }
 
-  leeHoteles() {
-    return this.miHotel.ref.get();
+  leeHoteles(destino: string) {
+   if (destino!==""){
+      return this.miHotel.ref.orderByChild('destino').equals(destino);
+
+
+   }
+   else {
+     return this.miHotel.ref.get();
+      } 
   }
 
 
