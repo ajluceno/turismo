@@ -56,7 +56,7 @@ export class HomePage {
       this.loadingController.dismiss();
     });
 
-    this.moneda.leeMoneda().then((querySnapshot) => {
+    this.moneda.leeMoneda(this.destino).then((querySnapshot) => {
       this.listadoMoneda = [];
       querySnapshot.forEach((doc) => {
         this.listadoMoneda.push({ id: doc.id, ...doc.data() });
@@ -65,7 +65,7 @@ export class HomePage {
       this.loadingController.dismiss();
     });
 
-    this.avion.leeAvion().then((querySnapshot) => {
+    this.avion.leeAvion(this.destino).then((querySnapshot) => {
       this.listadovuelos = [];
       querySnapshot.forEach((doc) => {
         this.listadovuelos.push({ id: doc.id, ...doc.data() });
@@ -84,7 +84,7 @@ initializeItems(){
     return await myloading.present();
   }
     filtrar(busqueda){
-      this.destino = busqueda.srcElement.value;
+      this.destino = busqueda.srcElement.value.toLowerCase();
       console.log(this.destino);
       this.actualizarPage(this.destino);
     }
@@ -102,7 +102,7 @@ initializeItems(){
     });
 
 
-    this.moneda.leeMoneda().then((querySnapshot) => {
+    this.moneda.leeMoneda(destino).then((querySnapshot) => {
       this.listadoMoneda = [];
       querySnapshot.forEach((doc) => {
         this.listadoMoneda.push({ id: doc.id, ...doc.data() });
@@ -111,7 +111,7 @@ initializeItems(){
       this.loadingController.dismiss();
     });
 
-    this.avion.leeAvion().then((querySnapshot) => {
+    this.avion.leeAvion(destino).then((querySnapshot) => {
       this.listadovuelos = [];
       querySnapshot.forEach((doc) => {
         this.listadovuelos.push({ id: doc.id, ...doc.data() });
@@ -148,7 +148,7 @@ animateIndicator(e) {
 }
 
 doRefresh(refresher) {
-  this.avion.leeAvion()
+  this.avion.leeAvion(this.destino)
     .then(querySnapshot => {
       this.listadovuelos = [];
       querySnapshot.forEach((doc) => {
@@ -173,7 +173,7 @@ doRefresh(refresher) {
       this.initializeItems();
       refresher.target.complete();
     });
-    this.moneda.leeMoneda()
+    this.moneda.leeMoneda(this.destino)
     .then(querySnapshot => {
       this.listadoMoneda = [];
       querySnapshot.forEach((doc) => {

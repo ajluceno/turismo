@@ -13,8 +13,14 @@ export class AvionService {
     this.miAvion = fireStore.collection<any>(environment.firebaseConfig.vuelos)
   }
 
-  leeAvion() {
-    return this.miAvion.ref.get();
-  }
+  leeAvion(destino:String) {
+    if (destino!==""){
+      return this.miAvion.ref.orderBy('destino').startAt(destino).get();
 
+
+   }
+   else {
+     return this.miAvion.ref.get();
+      } 
+}
 }

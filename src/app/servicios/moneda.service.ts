@@ -13,8 +13,14 @@ export class MonedaService {
     this.miHotel = fireStore.collection<any>(environment.firebaseConfig.moneda)
   }
 
-  leeMoneda() {
-    return this.miHotel.ref.get();
-  }
+  leeMoneda(destino :String) {
+    if (destino!==""){
+      return this.miHotel.ref.orderBy('destino').startAt(destino).get();
 
+
+   }
+   else {
+     return this.miHotel.ref.get();
+      } 
+    }
 }

@@ -15,7 +15,7 @@ export class HotelService {
 
   leeHoteles(destino: string) {
    if (destino!==""){
-      return this.miHotel.ref.orderByChild('destino').equals(destino);
+      return this.miHotel.ref.orderBy('destino').startAt(destino).get();
 
 
    }
