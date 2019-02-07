@@ -1,9 +1,7 @@
-// http://ionicframework.com/docs/theming/
 @import '~@ionic/angular/css/core.css';
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
-
 @import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
@@ -11,16 +9,10 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 .imagenlogo {
-
-
-margin-left: 13%;
-
-
+    margin-left: 13%;
 }
-ion-header{
 
+ion-header{
     --ion-background-color : #6096d4;
 }
 
-
- 

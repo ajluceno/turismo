@@ -1,7 +1,3 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false,
   currentLanguages:['es','en'], //idiomas disponibles de la aplicación
@@ -16,6 +12,5 @@ export const environment = {
     vuelos: "vuelos",
     hoteles: "hoteles",
     moneda: "moneda"
-
-}
+  }
 }

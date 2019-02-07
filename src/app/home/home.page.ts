@@ -1,6 +1,5 @@
 import { Component,  ViewChild} from '@angular/core';
 import { IonSlides, IonInfiniteScroll, LoadingController } from '@ionic/angular';
-import { VuelosService } from '../servicios/vuelos.service';
 import { HotelService } from '../servicios/hotel.service';
 import { MonedaService } from '../servicios/moneda.service';
 import { AvionService } from '../servicios/avion.service';
@@ -38,7 +37,7 @@ export class HomePage {
     private loadingController: LoadingController,
     private moneda :MonedaService,
     private avion:AvionService
-  // private vuelos: VuelosService
+  
     ) {
       this.initializeItems();
 

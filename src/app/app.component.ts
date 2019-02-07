@@ -3,11 +3,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TemaService } from './servicios/tema.service';
-//import {environment} from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
-//import { NgSelectOption } from '@angular/forms';
-//import { SelectorContext } from '@angular/compiler';
-//import { SelectInterface } from '@ionic/core';
 
 
 
@@ -39,7 +35,7 @@ export class AppComponent
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
    private translate: TranslateService,
-   //private langModel: any
+   
   ) {
     this.initializeApp();
   }
@@ -61,7 +57,6 @@ export class AppComponent
     }
 }
 changeLang($event) {
-  //console.log(this.langModel);
  this.translate.use($event.target.value);
  console.log($event.target.value);
  

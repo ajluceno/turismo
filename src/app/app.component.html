@@ -11,32 +11,24 @@
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
             <ion-item  [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-icon slot="start" color="primary" [name]="p.icon"></ion-icon>
-
-              <ion-label >
-                {{p.title | translate }}
-              </ion-label>
-              
-              
-            </ion-item>
-            
-          </ion-menu-toggle>
-          
-        <ion-toggle slot="end"  (ionChange)="cambiarTema($event)"></ion-toggle>
+                <ion-label >
+                  {{p.title | translate }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          <ion-toggle slot="end"  (ionChange)="cambiarTema($event)"></ion-toggle>
           <ion-label class="temaO" color="primary">{{"Cambiar tema" | translate}}</ion-label>
-          
-
-          <ion-item >
-            <ion-label >{{"Cambiar idioma" | translate}}</ion-label>
+        <ion-item >
+        <ion-label >{{"Cambiar idioma" | translate}}</ion-label>
           <ion-select  [okText]="this.translate.instant('Aceptar')" [cancelText]="this.translate.instant('Cancelar')" placeholder="Idioma" (ionChange)="changeLang($event)">
-             
               <ion-select-option selected="selected" value="es">Español</ion-select-option>
               <ion-select-option  value="en">Inglés</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
+          </ion-select>
+        </ion-item>
+      </ion-list>
      <img class="imagenlogo" src="assets/logonuevo.png" >
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
-  </ion-split-pane>
+   </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+ </ion-split-pane>
 </ion-app>
