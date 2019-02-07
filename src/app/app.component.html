@@ -29,7 +29,7 @@
             <ion-label >{{"Cambiar idioma" | translate}}</ion-label>
           <ion-select  [okText]="this.translate.instant('Aceptar')" [cancelText]="this.translate.instant('Cancelar')" placeholder="Idioma" (ionChange)="changeLang($event)">
              
-              <ion-select-option selected="selected">Español</ion-select-option>
+              <ion-select-option selected="selected" value="es">Español</ion-select-option>
               <ion-select-option  value="en">Inglés</ion-select-option>
             </ion-select>
           </ion-item>

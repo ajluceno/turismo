@@ -14,7 +14,8 @@
 <!--codigo prueba-->
     </ion-buttons>
   </ion-toolbar>
-  <ion-searchbar style="background-color: #ffffff"(ionChange)="filtrar($event)" placeholder="Buscar destino" animated></ion-searchbar>
+  <ion-searchbar style="background-color: #ffffff"(ionChange)="filtrar($event)" 
+  placeholder="{{'Buscar' | translate}}" animated></ion-searchbar>
 
   <ion-segment [(ngModel)]="category" (ionChange)="slides.slideTo(category)" style="background-color: #6096d4"
   color="light">
@@ -60,7 +61,7 @@ style="margin-top:2px">
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
-        <p>{{item.origen}} - {{item.destino}}</p>
+        <p>{{item.origen}} - {{item.destinoMa}}</p>
         <p>{{item.hora_salida}} - {{item.hora_llegada}}</p>
         <p>{{item.precio}}€</p>
 
@@ -74,7 +75,11 @@ style="margin-top:2px">
       <img src="{{item.foto}}"/>
       <ion-card-header>
         <ion-buttons>
-            <ion-card-title >{{item.nombre}}</ion-card-title>
+            <ion-card-title >{{item.nombre}}  
+              {{item.destinoMa}}
+
+
+            </ion-card-title>
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
@@ -94,7 +99,7 @@ style="margin-top:2px">
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
-        El valor de la moneda es:<p>{{item.valorEuro}}</p>
+        El valor en euros es:<p>{{item.valorEuro}}</p>
     </ion-card-content>
     </ion-card>
   </ion-slide>
