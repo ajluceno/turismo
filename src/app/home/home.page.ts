@@ -147,7 +147,45 @@ animateIndicator(e) {
       ((e.target.swiper.progress * (this.ntabs - 1)) * 100) + '%,0,0)';
 }
 
-
+doRefresh(refresher) {
+  this.avion.leeAvion()
+    .then(querySnapshot => {
+      this.listadovuelos = [];
+      querySnapshot.forEach((doc) => {
+        this.listadovuelos.push({ id: doc.id, ...doc.data() });
+      });
+      this.listadoPanelVuelos = this.listadovuelos;
+      //llamamos al metodo initializeItem para que recargue 
+      //el arraylist con los elementos a buscar
+      this.initializeItems();
+      refresher.target.complete();
+    });
+    
+    this.hotel.leeHoteles(this.destino)
+    .then(querySnapshot => {
+      this.listadoHotel = [];
+      querySnapshot.forEach((doc) => {
+        this.listadoHotel.push({ id: doc.id, ...doc.data() });
+      });
+      this.listadoPanelHotel = this.listadoHotel;
+      //llamamos al metodo initializeItem para que recargue 
+      //el arraylist con los elementos a buscar
+      this.initializeItems();
+      refresher.target.complete();
+    });
+    this.moneda.leeMoneda()
+    .then(querySnapshot => {
+      this.listadoMoneda = [];
+      querySnapshot.forEach((doc) => {
+        this.listadoMoneda.push({ id: doc.id, ...doc.data() });
+      });
+      this.listadoPanelMoneda = this.listadoMoneda;
+      //llamamos al metodo initializeItem para que recargue 
+      //el arraylist con los elementos a buscar
+      this.initializeItems();
+      refresher.target.complete();
+    });
+}
 
 
 }

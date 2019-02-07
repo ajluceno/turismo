@@ -6,7 +6,12 @@
       </ion-menu-button>
       <ion-title style="color: #ffffff" lines="none">
         WhereUWant 
+        
       </ion-title> 
+      <!--codigo prueba-->
+      
+
+<!--codigo prueba-->
     </ion-buttons>
   </ion-toolbar>
   <ion-searchbar (ionChange)="filtrar($event)" placeholder="Buscar destino" animated></ion-searchbar>
@@ -38,6 +43,11 @@ style="margin-top:2px">
 </ion-header>
 
 <ion-content>
+    <ion-refresher style="color:rgb(51, 50, 48)" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content style="color:rgb(221, 221, 221)" pullingIcon="arrow-dropdown" refreshingSpinner="crescent"
+          refreshingText="Actualizando">
+        </ion-refresher-content>
+      </ion-refresher>
 <ion-slides color="primary" #slides (ionSlideTransitionStart)="updateIndicatorPosition();updateCat(slides.getActiveIndex())"
   (ionSlideWillChange)="updateIndicatorPosition()" (ionSlideDidChange)="updateIndicatorPosition()" #SwipedTabsSlider
   (ionSlideDrag)="animateIndicator($event)">
