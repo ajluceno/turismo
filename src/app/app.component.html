@@ -20,9 +20,10 @@
           <ion-label class="temaO" color="primary">{{"Cambiar tema" | translate}}</ion-label>
         <ion-item >
         <ion-label >{{"Cambiar idioma" | translate}}</ion-label>
-          <ion-select  [okText]="this.translate.instant('Aceptar')" [cancelText]="this.translate.instant('Cancelar')" placeholder="Idioma" (ionChange)="changeLang($event)">
-              <ion-select-option selected="selected" value="es">Español</ion-select-option>
-              <ion-select-option  value="en">Inglés</ion-select-option>
+          <ion-select [okText]="this.translate.instant('Aceptar')" [cancelText]="this.translate.instant('Cancelar')" placeholder="Idioma" (ionChange)="changeLang($event)">
+              <ion-select-option selected="selected" value="es">{{"Español" | translate}}</ion-select-option>
+              <ion-select-option  value="en">{{"Ingles" | translate }}</ion-select-option>
+              <ion-select-option  value="tr">{{"Turco" | translate}}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>

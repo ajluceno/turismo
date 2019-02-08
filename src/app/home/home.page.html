@@ -55,7 +55,7 @@ style="margin-top:2px">
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
-        <p>{{item.origen}} - {{item.destinoMa}}</p>
+        <p>{{item.origen}} - {{item.destinoMa | translate}}</p>
         <p>{{item.hora_salida}} - {{item.hora_llegada}}</p>
         <p>{{item.precio}}€</p>
     </ion-card-content>
@@ -67,12 +67,14 @@ style="margin-top:2px">
       <ion-card-header>
         <ion-buttons>
             <ion-card-title color="primary" >{{item.nombre}}  
-              {{item.destinoMa}}
+              {{item.destinoMa | translate}}
             </ion-card-title>
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
-        <p >{{item.precioDia}}€/dia</p> <p >¡Su puntuación es de :{{item.puntuacion}}!</p>
+        <p >{{item.estrellas}}</p>
+        <p >{{item.precioDia}}€/{{"dia" | translate}}</p> 
+        <p >¡{{"puntuacion" | translate}}: {{item.puntuacion}} !</p>
     </ion-card-content>
     </ion-card>
   </ion-slide>
@@ -80,11 +82,12 @@ style="margin-top:2px">
     <ion-card *ngFor="let item of listadoPanelMoneda;let i = index" >
       <ion-card-header>
         <ion-buttons>
-            <ion-card-title color="primary">{{item.moneda}}</ion-card-title>
+            <ion-card-title color="primary">{{item.moneda | translate}}</ion-card-title>
         </ion-buttons>
     </ion-card-header>
     <ion-card-content >
-        El valor en euros es:<p>{{item.valorEuro}}</p>
+        <p>{{"Simbolo" | translate}}: {{item.simbolo}}</p>
+        {{"elvalor" | translate}}:<p>{{item.valorEuro}}</p>
     </ion-card-content>
     </ion-card>
   </ion-slide>
