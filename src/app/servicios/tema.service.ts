@@ -49,7 +49,7 @@ export class TemaService {
           { themeVariable: '--ion-header-color', value: '#383838'},
           { themeVariable: '--ion-card-text', value: '#a2a4ab'},
           { themeVariable: '--ion-title-text', value: '#f4f5f8cc'},
-          { themeVariable: '--ion-fondo-refresher', value: '#6b6565'}
+          { themeVariable: '--ion-fondo-refresher', value: '#444242'}
 
          
 
