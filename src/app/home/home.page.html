@@ -37,8 +37,8 @@ style="margin-top:2px">
 </ion-header>
                 <!--Actualizar-->
 <ion-content> 
-    <ion-refresher color="primaryº" (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content  color="primary" pullingIcon="arrow-dropdown" refreshingSpinner="crescent"
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content  style="color: var(--ion-card-text)"   style="background-color: var(--ion-title-text)" pullingIcon="arrow-dropdown" refreshingSpinner="crescent"
           refreshingText="Actualizando">
         </ion-refresher-content>
       </ion-refresher>
