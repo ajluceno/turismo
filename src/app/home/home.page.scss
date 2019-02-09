@@ -58,11 +58,12 @@ ion-slide.swiper-slide {
 }
 
 ion-header{
-  background-color: #ffffff !important;
+
+ background-color: var(--ion-header-color) !important;
 }
 
 .buscador{
 
-  --icon-color : "primary";
+  --icon-color :  var(--ion-title-text);
    
 }

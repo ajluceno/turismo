@@ -32,16 +32,26 @@ export class TemaService {
           { themeVariable: '--ion-item-color', value: '#000'},
           { themeVariable: '--ion-color-text', value: '#000'},
           { themeVariable: '--ion-background-color', value: '#ffffff'},
+          { themeVariable: '--ion-header-color', value: '#ffffff'},
+          { themeVariable: '--ion-card-text', value: '#222020'},
+          { themeVariable: '--ion-title-text', value: '#ffffff'}
         ]
       },
       {
 
         name: 'dark',
         styles: [
-          { themeVariable: '--ion-color-primary', value: '#ffffff'},
+          { themeVariable: '--ion-color-primary', value: '#000'},
           { themeVariable: '--ion-item-color', value: '#FFF'},
           { themeVariable: '--ion-color-text', value: '#FFF'},
           { themeVariable: '--ion-background-color', value: '#383838'},
+          { themeVariable: '--ion-header-color', value: '#383838'},
+          { themeVariable: '--ion-card-text', value: '#a2a4ab'},
+          { themeVariable: '--ion-title-text', value: '#f4f5f8cc'}
+
+         
+
+          
          
         ]
       }
