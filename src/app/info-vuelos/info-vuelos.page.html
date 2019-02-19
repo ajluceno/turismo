@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+    <ion-button class="menu" (click)="volverAtras()">
+        <img src="assets/back.png" class="menu"  >
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color: var(--ion-title-text)" >
+        {{"infoV" | translate}}
+  </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <ion-card >
+    <ion-card-header>
+    <ion-buttons>
+    <ion-card-title   style="color: var(--ion-card-text)">{{this.aerolinea}}</ion-card-title>
+    </ion-buttons>
+    </ion-card-header>
+       <ion-card-content  class="fixed-scroll" >
+            <p>{{this.foto}}</p>
+            
+        
+        <img src="{{this.texto}}">
+              </ion-card-content>
+              </ion-card>
+          </ion-content> 
+          

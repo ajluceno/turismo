@@ -1,0 +1,109 @@
+<ion-header >
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu">
+        <img src="assets/Menu.png" class="menu" >
+      </ion-menu-button>
+      <ion-title style="color: var(--ion-title-text)" lines="none">
+        WhereUWant 
+      </ion-title> 
+    </ion-buttons>
+  </ion-toolbar>
+                 <!--Buscador-->
+
+  <ion-searchbar style="background-color: #ffffff" class="buscador" style="color: #ffffff "
+  (ionChange)="filtrar($event)" placeholder="{{'Buscar' | translate}}" animated></ion-searchbar>
+
+                 <!--pestañas-->
+
+  <ion-segment [(ngModel)]="category" (ionChange)="slides.slideTo(category)" style="background-color: #6096d4"
+  color="light">
+  <ion-segment-button layout="icon-start" value="0" style="--padding-end:0px;--padding-start:0px">
+    <ion-icon name="rocket" style="margin-right:1px;zoom:0.8"></ion-icon>
+    <ion-label >{{"Vuelos" | translate}}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button layout="icon-start" value="1" style="--padding-end:2px;--padding-start:0px">
+    <ion-icon name="bed" style="margin-right:0px;zoom:0.8"></ion-icon>
+    <ion-label >{{"Hoteles" | translate}}</ion-label>
+  </ion-segment-button>
+ <ion-segment-button layout="icon-start" value="2" style="--padding-end:0px;--padding-start:0px">
+        <ion-icon name="cash" style="margin-right:1px;zoom:0.8"></ion-icon>
+        <ion-label>{{"Moneda" | translate}}</ion-label>
+      </ion-segment-button>
+</ion-segment>
+<div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}" 
+style="margin-top:2px">
+</div>
+</ion-header>
+                <!--Actualizar-->
+<ion-content> 
+    <ion-refresher style="color: var(--ion-fondo-refresher)" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content id='spinner'    style="background-color: var(--ion-fondo-refresher)" pullingIcon="null" refreshingSpinner="bubbles">
+        </ion-refresher-content>
+      </ion-refresher>
+                  <!--slides-->
+
+<ion-slides color="primary" #slides (ionSlideTransitionStart)="updateIndicatorPosition();updateCat(slides.getActiveIndex())"
+  (ionSlideWillChange)="updateIndicatorPosition()" (ionSlideDidChange)="updateIndicatorPosition()" #SwipedTabsSlider
+  (ionSlideDrag)="animateIndicator($event)">
+  <ion-slide class="fixed-scroll">
+    <ion-card *ngFor="let item of listadoPanelVuelos;let i = index" >
+      <ion-card-header>
+        <ion-buttons>
+            <ion-card-title (click)="modalVuelos(item.id, item.aerolinea,  item.foto, item.texto, item.origen, item.precio)" style="color: var(--ion-card-text)" >{{item.aerolinea}}</ion-card-title>
+        </ion-buttons>
+    </ion-card-header>
+    <ion-card-content (click)="modalVuelos(item.id, item.aerolinea, item.foto, item.texto, item.origen, item.precio)">
+        <p><img src="{{item.gif}}"/></p>
+        <p>{{item.origen}} - {{item.destinoMa | translate}}</p>
+        <p>{{item.hora_salida}} - {{item.hora_llegada}}</p>
+        <p>{{item.precio}}€</p>
+    </ion-card-content>
+    </ion-card>
+  </ion-slide>
+
+
+
+  <ion-slide class="fixed-scroll">
+    <ion-card *ngFor="let item of listadoPanelHotel;let i = index" >
+      <img src="{{item.foto}}"/>
+      <ion-card-header> 
+        <ion-buttons>
+            <ion-card-title (click)="modalHoteles(item.id, item.nombre, item.foto, item.texto, item.puntuacion)"  style="color: var(--ion-card-text)">{{item.nombre}}  
+              {{item.destinoMa | translate}}
+            </ion-card-title>
+        </ion-buttons>
+    </ion-card-header>
+    <ion-card-content (click)="modalHoteles(item.id, item.nombre, item.foto, item.texto, item.puntuacion)">
+        <p >{{item.estrellas}}</p>
+        <p >{{item.precioDia}}€/{{"dia" | translate}}</p> 
+        <p >¡{{"puntuacion" | translate}}: {{item.puntuacion}} !</p>
+    </ion-card-content>
+    </ion-card>
+  </ion-slide>
+
+
+
+<ion-slide class="fixed-scroll">
+    <ion-card *ngFor="let item of listadoPanelMoneda;let i = index">
+      <ion-card-header>
+        <ion-buttons>
+            <ion-card-title  (click)="modal(item.id, item.moneda, item.foto, item.texto, item.simbolo, item.valorEuro)" style="color: var(--ion-card-text)">{{item.moneda | translate}}</ion-card-title>
+        </ion-buttons>
+    </ion-card-header>
+    <ion-card-content  (click)="modal(item.id, item.foto, item.texto, item.moneda, item.simbolo, item.valorEuro)">
+        <p>{{"Simbolo" | translate}}: {{item.simbolo}}</p>
+        {{"elvalor" | translate}}:<p>{{item.valorEuro}}</p>
+    </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+</ion-content> 
+
+  
+  
+  
+  
+  
+  
+  

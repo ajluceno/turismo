@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header >
+        <ion-toolbar>
+          <ion-title style="color: var(--ion-title-text)">Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="prueba1">
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item  [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start"  style="color: var(--ion-card-text)" [name]="p.icon"></ion-icon>
+                <ion-label  style="color: var(--ion-card-text)" >
+                  {{p.title | translate }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            
+
+          <ion-toggle slot="end"   (ionChange)="cambiarTema($event)"></ion-toggle>
+          <ion-label class="temaO" style="color: var(--ion-card-text)">{{"Cambiar tema" | translate}}</ion-label>
+        <ion-item >
+        <ion-label  style="color: var(--ion-card-text)" >{{"Cambiar idioma" | translate}}</ion-label>
+          <ion-select  style="color: var(--ion-card-text)"  [okText]="this.translate.instant('Aceptar')" [cancelText]="this.translate.instant('Cancelar')" placeholder="Idioma" (ionChange)="changeLang($event)">
+              <ion-select-option selected="selected" value="es">{{"Español" | translate}}</ion-select-option>
+              <ion-select-option  value="en">{{"Ingles" | translate }}</ion-select-option>
+              <ion-select-option  value="tr">{{"Turco" | translate}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+     <img class="imagenlogo" src="assets/logonuevo.png" >
+   </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+ </ion-split-pane>
+</ion-app>
