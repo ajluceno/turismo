@@ -14,7 +14,11 @@ export class MonedaService {
     this.miMoneda = fireStore.collection<any>(environment.firebaseConfig.moneda)
     this.miMoneda1 = fireStore.collection<any>(environment.firebaseConfig.moneda)
   }
-
+  
+/**
+   * Leemos los datos de la base de datos de la tabla Moneda
+   * @param destino
+   */
   leeMoneda(destino:String) {
     if (destino!==""){
 
