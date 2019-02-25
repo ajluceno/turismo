@@ -27,7 +27,8 @@ export class ResumenPage implements OnInit {
    }
 
   ngOnInit() {
-  }
+  } 
+  //volvemos atrás
   volverAtras(){this.modalController.dismiss(); }
 
 }

@@ -11,7 +11,10 @@ import { ToastController } from '@ionic/angular';
 export class CustomToastModule {
   toast;
   constructor(private toastCtrl: ToastController) { }
-
+/**
+   * nos muestra el mensaje de internet y sus propiedades como el boton, la duracion...
+   * @param msg 
+   */
   async show(msg) {
     const toast = await this.toastCtrl.create({
       message: msg,
@@ -22,7 +25,11 @@ export class CustomToastModule {
     });
     toast.present();
   }
-
+/**
+   * nos muestra la barra arriba 
+   * @param msg 
+   * @param time
+   */
   async showTop(msg, time?) {
     if (this.toast)
       this.toast.dismiss();

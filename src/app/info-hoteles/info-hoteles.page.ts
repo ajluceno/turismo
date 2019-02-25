@@ -30,6 +30,7 @@ export class InfoHotelesPage implements OnInit {
 
   ngOnInit() {
   }
+  //volvemos atrás 
   volverAtras(){this.modalController.dismiss(); }
 
 }
