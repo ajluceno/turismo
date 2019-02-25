@@ -23,7 +23,7 @@ export class TemaService {
   private currentTheme: number = 0;
  
   constructor(private domCtrl: DomController, @Inject(DOCUMENT) private document) {
- 
+ //variables del tema
     this.themes = [
       {
         name: 'light',
@@ -70,7 +70,10 @@ export class TemaService {
     }
       this.setTheme(this.themes[this.currentTheme].name);
   }
- 
+ /**
+  * Seleccionamos el tema
+   * @param name 
+   */
   setTheme(name): void {
  
       let theme = this.themes.find(theme => theme.name === name);

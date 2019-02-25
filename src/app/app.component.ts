@@ -53,7 +53,9 @@ export class AppComponent
     this.initializeApp();
   }
 
-
+/**
+   * Inicializamos el lenguaje por defecto y el que usamos
+   */
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -64,6 +66,10 @@ export class AppComponent
    
     });
   }
+  /**
+   * Cambiamos de tema a dark o light
+   * @param e
+   */
   cambiarTema(e) {
     if (e.detail.checked) { 
       this.themeS.setTheme("dark");
@@ -71,7 +77,10 @@ export class AppComponent
       this.themeS.setTheme("light");
     }
 }
-
+/**
+   * Pasamos el evento para cambiar el idioma 
+   * @param $event
+   */
 changeLang($event) {
  this.translate.use($event.target.value);
  console.log($event.target.value);

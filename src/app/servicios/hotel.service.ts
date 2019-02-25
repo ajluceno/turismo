@@ -12,7 +12,10 @@ export class HotelService {
   constructor(private fireStore: AngularFirestore) {
     this.miHotel = fireStore.collection<any>(environment.firebaseConfig.hoteles)
   }
-
+/**
+   * Leemos los datos de la base de datos de la tabla Hoteles 
+   * @param destino
+   */
   leeHoteles(destino: string) {
     if (destino!==""){
       

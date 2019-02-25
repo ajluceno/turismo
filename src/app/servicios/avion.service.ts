@@ -12,7 +12,10 @@ export class AvionService {
   constructor(private fireStore: AngularFirestore) {
     this.miAvion = fireStore.collection<any>(environment.firebaseConfig.vuelos)
   }
-
+/**
+   * Leemos los datos de la base de datos de la tabla Avion
+   * @param destino
+   */
   leeAvion(destino:String) {
     if (destino!==""){
 
